@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #FFD1DB;
+    height: 100vh;
+    width: 100vw;
+}
+
+.radius-top{
+    position: fixed;
+    z-index: -1;
+    object-fit: contain;
+    right: 0;
+    top: 0;
+}
+
+.radius-bottom{
+    
+}
