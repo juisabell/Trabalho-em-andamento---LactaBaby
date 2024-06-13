@@ -43,14 +43,20 @@ main div{
         font-weight: 600;
         font-size: 1rem;
         color: white;
+
+        cursor: pointer;
     }
-    p{
+    a{
         font-weight: 400;
         font-size: 0.9rem;
+        text-decoration: none;
+        color: black;
     }
 }
 
-a{
+#bottom{
     position: absolute;
     bottom: 90px;
+    text-decoration: none;
+    color: black;
 }

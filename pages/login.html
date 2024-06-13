@@ -5,21 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lactababy</title>
     <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
     <img class="radius-top" src="assets/circuloalto.png">
-    <!-- <img class="radius-bottom" src="assets/circulobaixo.png"> -->
+    <img class="radius-bottom" src="assets/circulobaixo.png">
 
     <div class="title">
         <img src="assets/fotolacta.png">
         <p>Login</p>
     </div>
     <form class="central-wrapper">
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Senha">
-        <button>ENTRAR</button>
-        <a>Não tem conta? Cadastre-se</a>
+        <input id="email" name="email" type="email" placeholder="Email">
+        <input id="password" name="password" type="password" placeholder="Senha">
+        <button id="login-button">ENTRAR</button>
+        <a href="./cadastro.html">Não tem conta? Cadastre-se</a>
     </form>
 
 </body>
+<script src="js/login.js" type="module"></script>
 </html>

@@ -1,0 +1,23 @@
+CREATE DATABASE lactababy_db;
+USE lactababy_db;
+
+CREATE TABLE cadastro(
+	id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    conta_criada TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE dados_doadora(
+	id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    idade INT NOT NULL,
+    cpf VARCHAR(11) NOT NULL UNIQUE,
+    local_natal VARCHAR(255) NOT NULL,
+    cep VARCHAR(8) NOT NULL,
+    doencas VARCHAR(255) NOT NULL DEFAULT "nenhuma",
+    substancias VARCHAR(255) NOT NULL DEFAULT "nenhuma",
+    medicacao VARCHAR(255) NOT NULL DEFAULT "nenhuma",
+    FOREIGN KEY (email) REFERENCES cadastro(email)
+);
