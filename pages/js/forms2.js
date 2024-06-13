@@ -1,8 +1,7 @@
-let button2 = document.getElementById("form2-button");
+let button = document.getElementById("form2-button");
 const storedAccount = localStorage.getItem('@contaConectada');
-let list = [];
 
-button2.onclick = async function(event) {
+button.onclick = async function(event) {
   event.preventDefault();
 
   if (!storedAccount) {
@@ -22,6 +21,8 @@ button2.onclick = async function(event) {
       { checkbox: document.getElementById("doenca8"), value: "nenhuma" }
     ];
 
+    let list = [];
+
     doencasList.forEach(item => {
       if (item.checkbox.checked) {
         list.push(item.value);
@@ -33,12 +34,15 @@ button2.onclick = async function(event) {
       list.push(outraDoenca);
     }
 
+    listString = String(list)
+
     data = {
-      doencasList
+      listString,
+      userEmail
     }
 
     try {
-      const response = await fetch('http://localhost:3003/api/store/forms', {
+      const response = await fetch('http://localhost:3003/api/store/forms2', {
         method: "POST",
         headers: { "Content-type": "application/json;charset=UTF-8" },
         body: JSON.stringify(data)

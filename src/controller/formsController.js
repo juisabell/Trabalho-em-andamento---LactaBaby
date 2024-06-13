@@ -10,9 +10,6 @@ async function storeForms(request, response) {
     request.body.cep,
     request.body.userEmail
   );
-  const params2 = Array(
-    request.body.doencasList
-  );
 
   const query = 'UPDATE dados_doadora SET idade = ?, cpf = ?, local_natal = ?, cep = ? WHERE email = ?';
 
@@ -22,27 +19,85 @@ async function storeForms(request, response) {
         .status(201)
         .json({
           success: true,
-          message: 'Conta criada com sucesso!',
+          message: 'Formulário 1 enviado!',
           data: results
         })
     } else {
-      console.log(query, params, results)
       response
         .status(400)
         .json({
           success: false,
-          message: 'Dados inválidos',
+          message: 'Formulário 1: Dados inválidos',
           data: err
       })
     }
   })
+}
 
-  const query2 = 'INSERT INTO dados_doadora(doencas) VALUES(?)';
+async function storeForms2(request, response) {
+  
+  const params2 = Array(
+    request.body.listString,
+    request.body.userEmail
+  );
 
-  connection.query(query2, params2, (err, results2) => {
+  const query2 = 'UPDATE dados_doadora SET doencas = ? WHERE email = ?';
+
+  connection.query(query2, params2, (err2, results2) => {
+    if(results2) {
+      response
+        .status(201)
+        .json({
+          success: true,
+          message: 'Formulário 2 enviado!',
+          data: results2
+        })
+    } else {
+      console.log(query2, params2, results2)
+      response
+        .status(400)
+        .json({
+          success: false,
+          message: 'Formulário 2: Dados inválidos',
+          data: err2
+      })
+    }
+  })
+}
+
+async function storeForms3(request, response) {
+  
+  const params3 = Array(
+    request.body.listString2,
+    request.body.medicacao,
+    request.body.userEmail
+  );
+
+  const query3 = 'UPDATE dados_doadora SET substancias = ?, medicacao = ? WHERE email = ?';
+
+  connection.query(query3, params3, (err3, results3) => {
+    if(results3) {
+      response
+        .status(201)
+        .json({
+          success: true,
+          message: 'Formulário 3 enviado!',
+          data: results3
+        })
+    } else {
+      response
+        .status(400)
+        .json({
+          success: false,
+          message: 'Formulário 3: Dados inválidos',
+          data: err3
+      })
+    }
   })
 }
 
 module.exports = {
-  storeForms
+  storeForms,
+  storeForms2,
+  storeForms3
 }
