@@ -10,9 +10,9 @@ async function storeForms(request, response) {
     request.body.cep,
     request.body.userEmail
   );
-  // const params2 = Array(
-  //   request.body.email,
-  // );
+  const params2 = Array(
+    request.body.doencasList
+  );
 
   const query = 'UPDATE dados_doadora SET idade = ?, cpf = ?, local_natal = ?, cep = ? WHERE email = ?';
 
@@ -37,10 +37,10 @@ async function storeForms(request, response) {
     }
   })
 
-//   const query2 = 'INSERT INTO dados_doadora(email) VALUES(?)';
+  const query2 = 'INSERT INTO dados_doadora(doencas) VALUES(?)';
 
-//   connection.query(query2, params2, (err, results2) => {
-//   })
+  connection.query(query2, params2, (err, results2) => {
+  })
 }
 
 module.exports = {

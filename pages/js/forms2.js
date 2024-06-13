@@ -1,6 +1,6 @@
 let button2 = document.getElementById("form2-button");
 const storedAccount = localStorage.getItem('@contaConectada');
-let list = []
+let list = [];
 
 button2.onclick = async function(event) {
   event.preventDefault();
@@ -11,40 +11,49 @@ button2.onclick = async function(event) {
     const account = JSON.parse(storedAccount);
     let userEmail = account.email;
 
-    let doencasList = [    
-      doenca1 = document.getElementById("doenca1").value,
-      doenca2 = document.getElementById("doenca2").value,
-      doenca3 = document.getElementById("doenca3").value,
-      doenca4 = document.getElementById("doenca4").value,
-      doenca5 = document.getElementById("doenca5").value,
-      doenca6 = document.getElementById("doenca6").value,
-      doenca7 = document.getElementById("doenca7").value,
-      doenca8 = document.getElementById("doenca8").value,
-      outraDoenca = document.getElementById("outra-doenca").value,
-    ].forEach(doencas => {
-      if(doencas.checked == true){
-        list.push(doencas)
+    let doencasList = [
+      { checkbox: document.getElementById("doenca1"), value: "doenca_de_chagas" },
+      { checkbox: document.getElementById("doenca2"), value: "toxoplasmose" },
+      { checkbox: document.getElementById("doenca3"), value: "diabetes" },
+      { checkbox: document.getElementById("doenca4"), value: "anemia" },
+      { checkbox: document.getElementById("doenca5"), value: "has" },
+      { checkbox: document.getElementById("doenca6"), value: "sifis" },
+      { checkbox: document.getElementById("doenca7"), value: "rubeola" },
+      { checkbox: document.getElementById("doenca8"), value: "nenhuma" }
+    ];
+
+    doencasList.forEach(item => {
+      if (item.checkbox.checked) {
+        list.push(item.value);
       }
-    })
-    console.log(list)
+    });
 
-    // try {
-    //   const response = await fetch('http://localhost:3003/api/store/forms', {
-    //     method: "POST",
-    //     headers: { "Content-type": "application/json;charset=UTF-8" },
-    //     body: JSON.stringify(data)
-    //   });
+    let outraDoenca = document.getElementById("outra-doenca").value;
+    if (outraDoenca) {
+      list.push(outraDoenca);
+    }
 
-    //   let content = await response.json();
+    data = {
+      doencasList
+    }
 
-    //   if (content.success) {
-    //     alert(content.message);
-    //     window.location.href = './form3.html'
-    //   } else {
-    //     alert(content.message);
-    //   }
-    // } catch (error) {
-    //   alert('Falha ao conectar com o servidor.');
-    // }
+    try {
+      const response = await fetch('http://localhost:3003/api/store/forms', {
+        method: "POST",
+        headers: { "Content-type": "application/json;charset=UTF-8" },
+        body: JSON.stringify(data)
+      });
+
+      let content = await response.json();
+
+      if (content.success) {
+        alert(content.message);
+        window.location.href = './form3.html'
+      } else {
+        alert(content.message);
+      }
+    } catch (error) {
+      alert('Falha ao conectar com o servidor.');
+    }
   }
 }
