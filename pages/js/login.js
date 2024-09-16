@@ -20,6 +20,7 @@ button.onclick = async function(event) {
 
   if (content.success) {
     setAccount(content.data);
+    localStorage.removeItem('@contaBLHConectada')
     localStorage.setItem('@contaConectada', JSON.stringify(content.data));
     alert(content.message);
     window.location.href = './feed.html';

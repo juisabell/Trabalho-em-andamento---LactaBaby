@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lactababy pacientes</title>
+  <link rel="stylesheet" href="css/pacientes.css">
+</head>
+<body>
+ <!-- Div que será usada para mostrar detalhes de um paciente quando clicado -->
+  <div class="popup">
+    <p id="close">x</p>
+    <section class="container">
+      <article class="dados">
+        <h1 id="nome">Ana Ferreira</h1> <!-- Nome do paciente, será atualizado pelo JavaScript -->
+        <h2 id="idade">28 anos</h2>
+      </article>
+      
+      <div class="main">
+        <section class="wrapper-1">
+          <h1>Doenças</h1>
+          <p id="doencas"></p>
+        </section>
+    
+        <section class="wrapper-2">
+          <h1>Substâncias</h1>
+          <p id="subs"></p>
+        </section>
+    
+        <section class="wrapper-3">
+          <h1>Medicações</h1>
+          <p id="meds"></p>
+        </section>
+      </div>
+    </section>
+  </div>
+
+  
+  <!-- Área onde os cartões dos pacientes serão inseridos pelo JavaScript -->
+  <main id="listCards"></main>   
+
+</body>
+<script src="js/pacientes.js"></script>
+</html>

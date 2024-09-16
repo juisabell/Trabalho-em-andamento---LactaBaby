@@ -1,6 +1,7 @@
 const connection = require('../config/db');
 const dotenv = require('dotenv').config();
 
+// Função para atualizar os dados do formulário 1
 async function storeForms(request, response) {
   
   const params = Array(
@@ -11,6 +12,8 @@ async function storeForms(request, response) {
     request.body.account
   );
 
+
+  // Define a consulta SQL para atualizar dados no banco
   const query = 'UPDATE dados_doadora SET idade = ?, cpf = ?, local_natal = ?, cep = ? WHERE email = ?';
 
   connection.query(query, params, (err, results) => {

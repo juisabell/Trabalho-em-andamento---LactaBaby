@@ -8,7 +8,7 @@ button.onclick = async function(event) {
     alert("Nenhuma conta conectada");
   } else {
     const account = JSON.parse(storedAccount);
-    let userEmail = account.email;
+    let userEmail = account;
 
     let list = [];
 
@@ -29,7 +29,13 @@ button.onclick = async function(event) {
     if (outraSubstancia) {
       list.push(outraSubstancia);
     }
+    if (list == ""){
+      list.push("nenhuma")
+    }
     let medicacao = document.getElementById("medicacao").value;
+    if (medicacao == ""){
+      medicacao = "nenhuma"
+    }
 
     listString2 = String(list)
 

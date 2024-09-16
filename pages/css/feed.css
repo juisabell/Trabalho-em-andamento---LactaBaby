@@ -103,6 +103,18 @@ header img {
     border-radius: 20px;
     height: 100%;
 }
+.imagem2{
+    padding: 0;
+    width: 100%;
+    border-radius: 20px;
+    height: 100%;
+}
+.imagem3{
+    padding: 0;
+    width: 100%;
+    border-radius: 20px;
+    height: 100%;
+}
 
 #caixa2{
     width: 100vw;
@@ -112,7 +124,7 @@ header img {
     /* border: solid 4px; */
     display: flex;
     padding-block: 1rem;
-    overflow-x: auto;
+    overflow-x: auto; /* define como o conteúdo de um elemento deve se comportar quando ultrapassa a largura do contêiner no eixo horizontal (da esquerda para a direita). = > barra de rolagem*/
 }
 #caixa2 div {
     min-width: 300px;

@@ -8,7 +8,7 @@ button.onclick = async function(event) {
     alert("Nenhuma conta conectada");
   } else {
     const account = JSON.parse(storedAccount);
-    let userEmail = account.email;
+    let userEmail = account;
 
     let doencasList = [
       { checkbox: document.getElementById("doenca1"), value: "doenca_de_chagas" },
@@ -21,8 +21,10 @@ button.onclick = async function(event) {
       { checkbox: document.getElementById("doenca8"), value: "nenhuma" }
     ];
 
+     // Cria uma lista para armazenar os valores selecionados
     let list = [];
 
+    // Percorre a lista de checkboxes e adiciona os valores dos checkboxes marcados à lista
     doencasList.forEach(item => {
       if (item.checkbox.checked) {
         list.push(item.value);
@@ -30,12 +32,20 @@ button.onclick = async function(event) {
     });
 
     let outraDoenca = document.getElementById("outra-doenca").value;
+    // Se o campo "outra doença" não estiver vazio, adiciona seu valor à lista
     if (outraDoenca) {
       list.push(outraDoenca);
     }
 
+     // Se a lista estiver vazia, adiciona "nenhuma" à lista
+    if (list == ""){
+      list.push("nenhuma")
+    }
+
+    // Converte a lista em uma string, separada por vírgulas
     listString = String(list)
 
+    // envia p servidor
     data = {
       listString,
       userEmail
@@ -50,7 +60,7 @@ button.onclick = async function(event) {
 
       let content = await response.json();
 
-      if (content.success) {
+      if (content.success) { // Se o formulário foi enviado com sucesso, redireciona para outra página
         window.location.href = './form3.html'
       } else {
         alert(content.message);

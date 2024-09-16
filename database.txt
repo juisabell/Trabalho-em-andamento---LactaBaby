@@ -22,5 +22,22 @@ CREATE TABLE dados_doadora(
     FOREIGN KEY (email) REFERENCES cadastro(email)
 );
 
+CREATE TABLE banco_de_leite(
+	id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    unidade VARCHAR(255) NOT NULL,
+    senha VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE chat(
+    id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    idBLH number,
+    idDOADORA number,
+    enviado number,
+    msg LONGTEXT,
+)
+
 select * from cadastro;
-select * from dados_doadora
+select * from dados_doadora;
+select * from banco_de_leite;
+
+insert into banco_de_leite(unidade, senha) values("esteio", 123);

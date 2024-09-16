@@ -7,9 +7,14 @@ async function storeLogin(request, response) {
   
   const params = Array(
     request.body.email,
+    request.body.senha
   );
   
-  const query = "SELECT nome, email FROM cadastro WHERE email = ?;";
+  const query = `
+  SELECT cadastro.nome, cadastro.email, cadastro.senha, dados_doadora.idade, 
+  dados_doadora.doencas, dados_doadora.substancias, dados_doadora.medicacao FROM 
+  cadastro JOIN dados_doadora ON cadastro.email = dados_doadora.email WHERE cadastro.email = ?;
+  `;
 
   connection.query(query, params, (err, results) => {
     if (err) {

@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e43a81;
+  }
+  
+  .imagemheader {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .reportagem {
+    width: 100%;
+    height: auto;
+    opacity: 0.8;
+  }
+  
+  .img-header {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  h1 {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #F4D3DA;
+  }
+  
+  main {
+    position: relative;
+  }
+  
+  .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 5px solid #e43a81;
+    background-color: #e43a81;
+    border-radius: 7px;
+    top: -15px;
+    border-image: none;
+    box-sizing: border-box;
+    z-index: 2;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  
+  .destaque {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .texto {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }

@@ -1,0 +1,55 @@
+body {
+    background-color: #FFD1DB;
+}
+
+.imagemheader {
+    padding: 10px;
+    margin-top: 15px;
+}
+
+#caixa {
+    width: 100vw;
+    height: 45rem;
+    display: flex;
+    padding: 1rem;
+    overflow-x: auto;
+}
+
+.passo {
+    min-width: 300px;
+    max-height: 100rem; 
+    background-color: #F5B6C3;
+    margin-left: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.passo img {
+    width: 200px;
+    height: 200px;
+}
+
+
+.informacao {
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+    background-color: #F4D3DA;
+    height: 60vw;
+    width: 70vw ;
+}
+
+.passo .informacao p:first-child {
+    font: bold 30px sans-serif;
+    color: #DC49A0;
+
+}
+
+.passo .informacao p {
+    font: 15px sans-serif;
+    color: #DC49A0;
+}

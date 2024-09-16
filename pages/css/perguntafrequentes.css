@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+   
+}
+ 
+html, body {
+    height: 100%;
+    max-height: 850px;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffc0cb;
+}
+ 
+main {
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imagemheader{
+    padding: 10px;
+    margin-top: 15px;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    margin-right: 7px;
+    margin-top: 0;
+    align-items: center;
+}
+ 
+.accordion {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    margin: 4px 20px;
+    width: 350px;
+}
+ 
+.accordion-header {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    cursor: pointer;
+}
+ 
+
+ 
+.accordion-body {
+    color: #444;
+    font-size: 14px;
+    opacity: 0; /* Faz o corpo começar invisível (0 significa 100% transparente) */
+    height: 0;  /* A altura é 0, ou seja, ele começa fechado e sem espaço visível */
+    overflow: hidden; /* Esconde qualquer conteúdo que tente "sair" da área visível */
+    transition: opacity .3s; /*mudança em 3 segundos de opcaidade, ou seja, quando el for aparecer*/
+}
+ 
+/* quando a clase active é acionada no js */
+.accordion-body.active {
+    height: 100%; /* Expande o corpo para a altura total do conteúdo */
+    opacity: 1; /* Faz o corpo ficar totalmente visível (1 significa 100% visível) */
+    padding: 5px 0px;
+}
+ 
+.arrow {
+    transition: transform .2s linear;  /* Transforma (gira) a seta de forma suave, em 0,2 segundos */
+}
+ /* Quando tem a classe active, a seta gira 180 graus */
+.accordion:has(.active) .arrow {
+    transform: rotate(180deg);
+}
+ 
+ 
