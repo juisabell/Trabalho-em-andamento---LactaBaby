@@ -51,7 +51,6 @@ button.onclick = async function(event) {
       let content = await response.json();
 
       if (content.success) {
-        alert(content.message);
         window.location.href = './form3.html'
       } else {
         alert(content.message);

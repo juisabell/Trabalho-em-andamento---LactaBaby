@@ -21,7 +21,7 @@ async function storeCadastro(request, response) {
         .json({
           success: true,
           message: 'Conta criada com sucesso!',
-          data: results
+          data: params[1]
         })
     } else {
       response

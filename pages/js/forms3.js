@@ -30,9 +30,6 @@ button.onclick = async function(event) {
       list.push(outraSubstancia);
     }
     let medicacao = document.getElementById("medicacao").value;
-    if (medicacao) {
-      list.push(medicacao);
-    }
 
     listString2 = String(list)
 

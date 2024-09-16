@@ -22,7 +22,7 @@ button.onclick = async function(event) {
     setAccount(content.data);
     localStorage.setItem('@contaConectada', JSON.stringify(content.data));
     alert(content.message);
-    window.location.href = './form.html';
+    window.location.href = './feed.html';
   } else {
     alert(content.message);
   }

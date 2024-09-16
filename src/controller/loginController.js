@@ -9,7 +9,7 @@ async function storeLogin(request, response) {
     request.body.email,
   );
   
-  const query = "SELECT nome, email, senha FROM cadastro WHERE email = ?;";
+  const query = "SELECT nome, email FROM cadastro WHERE email = ?;";
 
   connection.query(query, params, (err, results) => {
     if (err) {

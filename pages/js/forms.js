@@ -8,7 +8,8 @@ button1.onclick = async function(event) {
     alert("Nenhuma conta conectada");
   } else {
     const account = JSON.parse(storedAccount);
-    let userEmail = account.email;
+    console.log(account)
+    let userEmail = account;
 
     let age = document.getElementById("age").value;
     let cpf = document.getElementById("cpf").value;
@@ -20,7 +21,7 @@ button1.onclick = async function(event) {
       cpf,
       natal,
       cep,
-      userEmail
+      account
     };
 
     try {
@@ -33,7 +34,7 @@ button1.onclick = async function(event) {
       let content = await response.json();
 
       if (content.success) {
-        alert(content.message);
+        alert(content.message)
         window.location.href = './form2.html'
       } else {
         alert(content.message);

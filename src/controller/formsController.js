@@ -8,7 +8,7 @@ async function storeForms(request, response) {
     request.body.cpf,
     request.body.natal,
     request.body.cep,
-    request.body.userEmail
+    request.body.account
   );
 
   const query = 'UPDATE dados_doadora SET idade = ?, cpf = ?, local_natal = ?, cep = ? WHERE email = ?';
@@ -81,7 +81,7 @@ async function storeForms3(request, response) {
         .status(201)
         .json({
           success: true,
-          message: 'Formulário 3 enviado!',
+          message: 'Cadastro realizado com sucesso',
           data: results3
         })
     } else {

@@ -1,3 +1,5 @@
+import { setAccount } from './account.js';
+
 const password = document.querySelector("#password");
 const confirmPassword = document.querySelector("#password-confirm");
 
@@ -43,8 +45,9 @@ button.onclick = async function(event) {
     let content = await response.json();
 
     if (content.success) {
-      alert(content.message);
-      window.location.href = './login.html'
+      setAccount(content.data);
+      localStorage.setItem('@contaConectada', JSON.stringify(content.data));
+      window.location.href = './form.html'
     } else {
       alert(content.message);
     }
