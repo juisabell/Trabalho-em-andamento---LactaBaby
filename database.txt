@@ -30,9 +30,9 @@ CREATE TABLE banco_de_leite(
 
 CREATE TABLE chat(
     id INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    idBLH number,
-    idDOADORA number,
-    enviado number,
+    idBLH INT,
+    idDOADORA INT,
+    enviado INT,
     msg LONGTEXT,
 )
 

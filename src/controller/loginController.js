@@ -11,7 +11,7 @@ async function storeLogin(request, response) {
   );
   
   const query = `
-  SELECT cadastro.nome, cadastro.email, cadastro.senha, dados_doadora.idade, 
+  SELECT cadastro.id, cadastro.nome, cadastro.email, cadastro.senha, dados_doadora.idade, 
   dados_doadora.doencas, dados_doadora.substancias, dados_doadora.medicacao FROM 
   cadastro JOIN dados_doadora ON cadastro.email = dados_doadora.email WHERE cadastro.email = ?;
   `;

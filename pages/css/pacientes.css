@@ -177,3 +177,50 @@ main{
   border-radius: 50%;
   padding: 5px;
 }
+
+/*ta dando err0*/
+.container-3 {
+  position: relative; /* Necessário para posicionamento absoluto do botão "+" */
+  padding: 15px;
+}
+
+.container-3 p {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: white;
+  color: #DD459F;
+  padding: 10px;
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botaochat {
+  background-color: white;
+  color: #DD459F;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  display: block;
+  margin: 15px auto 0; /* Centraliza o botão na parte inferior */
+}
+
+/* tirar o quadrado de dentro do circulo*/
+.container-3 p input[type="button"] {
+  background-color: white;
+  color: #DD459F;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

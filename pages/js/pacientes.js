@@ -6,9 +6,11 @@ let dataUser = Object;
 
 // Função para mostrar as informações de um paciente específico quando clicado
 function informacoes(id) {  
+  let cards = document.getElementById('listCards');
   console.log(dataUser);
   dataUser.map(user => {  // Percorre todos os usuários
     if (user.id === id) {// Verifica se o ID do usuário corresponde ao ID passado
+      cards.style.display = 'none';
       popup.style.display = 'flex' // mostra os detalhes
       document.querySelector("#nome").textContent = user.nome
       document.querySelector("#idade").textContent = user.idade
@@ -18,6 +20,7 @@ function informacoes(id) {
 
       document.querySelector("#close").addEventListener('click', function () {
         popup.style.display = 'none'
+        cards.style.display = 'flex'
       })
     }
   })
@@ -51,7 +54,7 @@ document.addEventListener('DOMContentLoaded', async (event) => {
           
           <input type="button" onclick="informacoes(${user.id})" value="+">
         </p>
-        <button class='botaochat' id='btnOpenChat' onclick='openChat(5)'>Entrar em contato</button>
+        <button class='botaochat' id='btnOpenChat' onclick='openChat(${user.id})'>Entrar em contato</button>
         </section> `
 
       mainHtml.innerHTML += card;

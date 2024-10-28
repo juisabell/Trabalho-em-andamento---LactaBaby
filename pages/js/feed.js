@@ -7,6 +7,7 @@ const faq = document.querySelector(".faq-section")
 const report = document.querySelector(".imagem")
 const report2 = document.querySelector(".imagem2")
 const report3 = document.querySelector(".imagem3")
+const butonchat = document.querySelector(".butonchat")
 
 perfilButton.addEventListener('click', () => {
   window.location.href = "./perfil.html"
@@ -38,4 +39,7 @@ report2.addEventListener('click', function(){
 })
 report3.addEventListener('click', function(){
   window.location.href = "reportagem3.html"
+})
+butonchat.addEventListener('click', function(){
+  window.location.href = "chat.html?destino=3"
 })
